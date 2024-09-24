@@ -50,3 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+    // Load tasks from localStorage when the page loads
+    loadTasks();
+});
