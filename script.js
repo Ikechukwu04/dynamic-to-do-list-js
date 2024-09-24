@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Set up the remove button to delete the task
         removeBtn.onclick = function () {
+            // Remove task from the DOM
             taskList.removeChild(li);
         };
 
@@ -56,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
 
     // Load tasks from localStorage when the page loads
     loadTasks();
