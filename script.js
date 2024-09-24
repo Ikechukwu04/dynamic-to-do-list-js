@@ -5,17 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const taskInput = document.getElementById('task-input');
     const taskList = document.getElementById('task-list');
 
-    // Function to add a task
-    function addTask() {
-        // Get the task text from the input field and trim whitespace
-        const taskText = taskInput.value.trim();
-        
-        // Check if the input field is not empty
-        if (taskText === "") {
-            alert("Please enter a task.");
-            return;
-        }
-
+    // Function to create a new task element and append it to the task list
+    function createTaskElement(taskText) {
         // Create a new list item (li) element for the task
         const li = document.createElement('li');
         li.textContent = taskText;
@@ -35,6 +26,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Append the list item to the task list
         taskList.appendChild(li);
+    }
+
+    // Function to add a task
+    function addTask() {
+        // Get the task text from the input field and trim whitespace
+        const taskText = taskInput.value.trim();
+        
+        // Check if the input field is not empty
+        if (taskText === "") {
+            alert("Please enter a task.");
+            return;
+        }
+
+        // Create a new task element and append it to the list
+        createTaskElement(taskText);
 
         // Clear the input field
         taskInput.value = "";
@@ -50,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
     // Load tasks from localStorage when the page loads
     loadTasks();
 });
